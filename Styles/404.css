@@ -1,4 +1,10 @@
+html,body,button{
+    font-family: monospace;
+}
 /* GLITCHING EFFECT */
+h1{
+    color: red;
+}
 .glitch-wrapper {
     width: 100%;
     height: 100%;
