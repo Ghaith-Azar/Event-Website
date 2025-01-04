@@ -1,0 +1,116 @@
+/* Main Swiper container styling */
+.swiper-container {
+    width: 80%;
+    max-width: 600px;  /* Limit the width to prevent it from getting too large */
+    height: 250px;     /* Control the height of the Swiper */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Wrapper styling */
+.swiper-wrapper {
+    display: flex;
+    cursor: pointer;
+}
+
+/* Slide styling */
+.swiper-slide {
+    text-align: center;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid black;
+}
+
+/* Navigation buttons styling */
+.swiper-button-prev, .swiper-button-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+/* Pagination dots styling */
+/* Pagination dots styling with added space above the dots */
+.swiper-pagination {
+    bottom: 105px;  /* Increase bottom spacing to move dots up */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    position: static;
+    margin-top: -15px; /* Adjust this to center the dots nicely */
+    text-align: center;
+
+
+}
+
+
+.swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #4CAF50;
+    transform: scale(1.2);
+}
+
+/* Pulse animation */
+.swiper-pagination-bullet {
+    animation: pulse 1.5s infinite;
+}
+
+.swiper-pagination-bullet-active {
+    animation: none;
+}
+
+/* Keyframes for the pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    .swiper-container {
+        width: 100%;
+        height: 200px;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
