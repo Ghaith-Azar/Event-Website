@@ -1,17 +1,165 @@
-footer {
-    background-color: #222;
-    color: #fff;
+/* FOOTER STYLING */
+.footer {
+    background-color: #02e901;
+    color: #000000;
     text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
+    width: 100%;
+    position: relative; /* Ensure it is positioned correctly */
+    bottom: 0;
 }
 
-footer a {
-    color: #8aff8e;
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+    min-width: 220px;
+}
+
+.footer-bottom {
+    background-color: #02e901;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #000000;
+}
+
+.footer-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #000000;
     text-decoration: none;
-    margin: 0 10px;
+    font-weight: bold;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.footer-section ul li a:hover {
+    color: #54ee52;
+}
+
+/* CONTACT INFO */
+.contact-info p a {
+    color: rgb(66, 56, 56);
+    font-weight: bold;
+}
+
+.contact-info p a:hover {
+    color: #023800;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    width: 80px;
+    height: auto;
+    display: inline-block;
+    flex-direction: column;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px; /* Decreased the size of the icons */
+    margin-bottom: 2.5px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-icons a svg {
+    width: 24px; /* Reduced size of the icons */
+    fill: #ffffff;
+}
+
+.social-icons .instagram {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #f56040);
+}
+
+.social-icons .twitter {
+    background-color: #000000;
+}
+
+.social-icons a:hover {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.social-icons a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .footer-section h2 {
+        font-size: 1.2em;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px; /* Slightly adjust icon size for smaller screens */
+    }
+
+    .social-icons a svg {
+        width: 20px; /* Adjusted size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section h2 {
+        font-size: 1em;
+    }
+
+    .social-icons a {
+        width: 30px;
+        height: 30px; /* Even smaller icons for mobile */
+    }
+
+    .social-icons a svg {
+        width: 18px; /* Smaller icons for mobile */
+    }
 }
