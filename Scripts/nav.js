@@ -1,13 +1,26 @@
-
+// Function to open the navigation
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
+    const sidenav = document.getElementById("mySidenav");
 
-    /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-    function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-    document.body.style.backgroundColor = "white";
+    if (window.innerWidth <= 768) {
+        sidenav.style.width = "100%"; // Full screen on mobile
+    } else {
+        sidenav.style.width = "300px"; // Partial width on desktop
     }
+}
+
+// Function to close the navigation
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+// Automatically close the nav when a link is clicked
+const navLinks = document.querySelectorAll(".sidenav a");
+navLinks.forEach(link => {
+    link.addEventListener("click", closeNav);
+});
+
+// Ensure the nav is closed by default when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+    closeNav();
+});

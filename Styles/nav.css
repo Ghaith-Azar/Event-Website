@@ -1,51 +1,55 @@
+/* Default Sidenav Style (Desktop) */
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    height: 100%; /* Full height */
+    width: 0; /* Start with 0 width */
+    position: fixed; /* Fixed position */
+    z-index: 9999; /* Highest priority to stay above other elements */
     top: 0;
     left: 0;
-    background-color: #111; /* Black*/
+    background-color: #111; /* Black background */
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    }
-    span{
-        cursor: pointer;
-    }
+    padding-top: 60px;
+    transition: 0.5s; /* Smooth transition effect */
+}
 
-    /* The navigation menu links */
-    .sidenav a {
+/* Navigation links */
+.sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
     transition: 0.3s;
-    }
+}
 
-    /* When you mouse over the navigation links, change their color */
-    .sidenav a:hover {
+.sidenav a:hover {
     color: #f1f1f1;
-    }
+}
 
-    /* Position and style the close button (top right corner) */
-    .sidenav .closebtn {
+/* Close button */
+.sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-    }
+}
 
-    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-    #main {
-    transition: margin-left .5s;
+/* Open button styling */
+span {
+    cursor: pointer;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+/* Page content */
+#main {
     padding: 20px;
-    }
+}
 
-    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-    @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+/* Mobile-specific style: Full-screen sidenav on smaller screens */
+@media screen and (max-width: 768px) {
+    .sidenav {
+        width: 100%; /* Full screen on mobile devices */
     }
+}
