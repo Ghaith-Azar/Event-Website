@@ -1,27 +1,21 @@
-function enableTouchHoverForAll() {
-    // Select all elements that have CSS hover styles
-    const hoverElements = Array.from(document.querySelectorAll('*')).filter((el) => {
-      // Check if the element has any hover styles
-      const hoverStyles = window.getComputedStyle(el, ':hover');
-      return hoverStyles.cssText !== '';
+document.addEventListener("DOMContentLoaded", () => {
+    let isScrolling = false;
+
+    // Detect scrolling
+    document.addEventListener("scroll", () => {
+        isScrolling = true;
+        setTimeout(() => (isScrolling = false), 200); // Reset after scrolling stops
     });
-  
-    // Add touch event listeners to simulate hover on touch devices
-    hoverElements.forEach((element) => {
-      element.addEventListener('touchstart', () => {
-        element.classList.add('hover-active');
-      });
-  
-      element.addEventListener('touchend', () => {
-        element.classList.remove('hover-active');
-      });
-  
-      element.addEventListener('touchmove', () => {
-        element.classList.remove('hover-active');
-      });
+
+    // Add touchstart event listener to all elements
+    document.querySelectorAll("*").forEach((element) => {
+        element.addEventListener("touchstart", () => {
+            if (isScrolling) {
+                element.classList.add("hover-effect");
+
+                // Remove the hover-effect class after a short delay
+                setTimeout(() => element.classList.remove("hover-effect"), 500);
+            }
+        });
     });
-  }
-  
-  // Run the function after the DOM has loaded
-  document.addEventListener('DOMContentLoaded', enableTouchHoverForAll);
-  
+});
