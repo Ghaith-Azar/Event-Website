@@ -17,8 +17,8 @@ main {
 
 /* FOOTER2 STYLING */
 .footer {
-    background-color: #061a4e;
-    color: #000000;
+    background-color: #001f6d;
+    color: #ffffff;
     text-align: center;
     width: 100%;
     bottom: 0;
@@ -48,10 +48,10 @@ main {
 .footer-bottom {
     border-top: #ffffff solid 1px;
     border-width: 85%;
-    background-color: #061a4e;
+    background-color: #001f6d;
     padding: 5px 0;
     font-weight: bold;
-    color: #000000;
+    color: #ffffff;
 }
 
 .footer-section h2 {
@@ -70,13 +70,13 @@ main {
 }
 
 .footer-section ul li a {
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
 
 .footer-section ul li a:hover {
-    color: #54ee52;
+    color: #7b7b7b;
 }
 
 
