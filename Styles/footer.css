@@ -17,7 +17,7 @@ main {
 
 /* FOOTER2 STYLING */
 .footer {
-    background-color: #02e901;
+    background-color: #061a4e;
     color: #000000;
     text-align: center;
     width: 100%;
@@ -46,8 +46,10 @@ main {
 }
 
 .footer-bottom {
-    background-color: #02e901;
-    padding: 10px 0;
+    border-top: #ffffff solid 1px;
+    border-width: 85%;
+    background-color: #061a4e;
+    padding: 5px 0;
     font-weight: bold;
     color: #000000;
 }
