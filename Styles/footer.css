@@ -1,11 +1,32 @@
-/* FOOTER STYLING */
+/* General page setup to ensure footer stays at the bottom */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    
+}
+body {
+    min-height: 100vh;
+}
+main {
+    flex: 1;
+}
+
+
+
+/* FOOTER2 STYLING */
 .footer {
     background-color: #02e901;
     color: #000000;
     text-align: center;
     width: 100%;
-    position: relative; /* Changed from fixed */
     bottom: 0;
+    left: 0;
+    right: 0;
+    display:fixed;
+    
+    min-height: 100%;
 }
 
 .footer-content {
@@ -13,6 +34,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
+    
+
+    min-height: 100%;
 }
 
 .footer-section {
@@ -53,8 +77,8 @@
     color: #54ee52;
 }
 
-/* CONTACT INFO */
-.contact-info p a {
+
+.contact-info p a{
     color: rgb(66, 56, 56);
     font-weight: bold;
 }
@@ -63,15 +87,17 @@
     color: #023800;
 }
 
-/* SOCIAL ICONS */
-.social-icons {
+
+
+/* SOCIALS ICONS */
+.redes {
     width: 80px;
     height: auto;
     display: inline-block;
     flex-direction: column;
 }
 
-.social-icons a {
+.redes a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,22 +107,22 @@
     margin-bottom: 2.5px;
 }
 
-.social-icons a svg {
+.redes a svg {
     width: 30px;
     fill: #ffffff;
 }
 
-.social-icons .instagram {
+.redes .instagram {
     background: linear-gradient(45deg, #833ab4, #fd1d1d, #f56040);
     border-radius: 10px;
 }
 
-.social-icons .twitter {
+.redes .twitter {
     background-color: #000000;
     border-radius: 10px;
 }
 
-.social-icons a:hover {
+.redes a:hover {
     width: 130%;
     border-radius: 0 10px 10px 0;
 }
@@ -118,7 +144,10 @@
     transition: opacity 0.2s ease-in-out;
 }
 
-.social-icons a:hover .tooltip {
+.redes a:hover .tooltip {
     visibility: visible;
     opacity: 1;
+    font-size: medium;
+
 }
+

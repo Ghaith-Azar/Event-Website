@@ -1,1 +1,2 @@
-document.getElementById('footer-style-2').style.display = 'flex'; // Show footer
+// document.getElementById('footer-style-2').style.display = 'block'; // Show footer
+// sasd
