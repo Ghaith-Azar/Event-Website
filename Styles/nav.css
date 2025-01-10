@@ -13,6 +13,9 @@
     padding-top: 60px;
     transition: 0.5s; /* Smooth transition effect */
 }
+header{
+    background-color: #0d0045;
+}
 
 /* Navigation links */
 .sidenav a {

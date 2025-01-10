@@ -4,9 +4,54 @@ html{
     margin: 0;
     padding: 0;  
 }
+@font-face {
+    font-family: 'AmericanCaptain';
+    src: url(/Fonts/AmericanCaptain-MdEY.otf);
+}
+@font-face {
+    font-family:'Bloopoly' ;
+    src: url(/Fonts/Bloopoly-PV3WZ.ttf);
+}
+@font-face {
+    font-family: 'Pasti';
+    src: url(/Fonts/PastiRegular-mLXnm.otf);
+}
+@font-face {
+    font-family: 'Tak';
+    src: url(/Fonts/TakCubit-2vWjw.ttf);
+}
+@font-face {
+    font-family: 'Warsaw';
+    src: url(/Fonts/WarsawGothicSuperextended-0qWv.otf);
+   
+}
+ @font-face {
+    font-family: 'RC';
+    src: url(/Fonts/RcRocketRegular-0WVW9.otf);
+}
+/* @font-face {
+    font-family: ;
+    src: url();
+}
+@font-face {
+    font-family: ;
+    src: url();
+}  */
 
 body {
-    font-family: monospace;
+    font-family: 'AmericanCaptain';
+    font-family: 'Bloopoly';
+    font-family: 'Pasti';
+    
+    font-family: 'Warsaw'; 
+ 
+    /* font-family: ''; 
+    font-family: ''; 
+    font-family: ''; 
+    font-family: '';   */
+
+   
+
     margin: 0;
     padding: 0;
     transition: background-color 0.3s ease;
