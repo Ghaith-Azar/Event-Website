@@ -37,13 +37,18 @@ html{
     font-family: ;
     src: url();
 }  */
-
-body {
-    font-family: 'AmericanCaptain';
-    font-family: 'Bloopoly';
+html{
+  font-family: 'AmericanCaptain';
+    /* font-family: 'Bloopoly'; */
     font-family: 'Pasti';
     
     font-family: 'Warsaw'; 
+    letter-spacing: 0.5px;
+    
+    
+}
+body {
+   
  
     /* font-family: ''; 
     font-family: ''; 
