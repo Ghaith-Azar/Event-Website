@@ -50,6 +50,7 @@ main {
     border-width: 85%;
     background-color: #001f6d;
     padding: 5px 0;
+    padding-bottom: 0px;
     font-weight: bold;
     color: #ffffff;
 }
