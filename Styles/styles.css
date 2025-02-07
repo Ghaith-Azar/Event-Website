@@ -315,10 +315,6 @@ h1 {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
   margin-bottom: 20px;
 }
 
@@ -357,4 +353,196 @@ h1 {
   color: #bfbfbf;
   padding-bottom: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --primary-color: #02e901;
+  --secondary-color: #d4af37;
+  --dark-bg: #1a1a1a;
+  --light-text: #ffffff;
+  --hover-effect: brightness(1.2);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+ 
+}
+.event-card {
+  background: rgba(108, 108, 108, 0.479);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  position: relative; /* Add relative positioning to allow absolute positioning inside */
+
+  width: 80%;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+}
+
+.event-image {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.event-details {
+  padding: 1.5rem;
+}
+
+.event-date {
+  position: absolute; /* Position it relative to the card */
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #e0f7fa, #e8f5e9); /* Light gradient background */
+  color: var(--dark-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: 2px solid #b2ebf2; /* Soft border to enhance the light effect */
+}
+
+.date-day {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00695c; /* Slightly darker color for day */
+}
+
+.date-month {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #004d40; /* Darker color for month */
+}
+
+
+.event-title {
+  font-size: 1.4rem;
+  margin: 1rem 0;
+}
+
+.event-location {
+  font-size: 1.1rem;
+}
+
+.event-description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.event-cta {
+  text-align: center;
+}
+
+.social-share {
+  padding-top: 10px;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.social-share a {
+  color: var(--light-text);
+  transition: color 0.3s ease;
+  font-size: 1.5rem; /* Optional, you can adjust size to your preference */
+}
+
+/* Specific colors for each social platform */
+.social-share a:hover {
+  color: var(--primary-color);
+}
+
+.social-share a.facebook {
+  color: #1877f2; /* Facebook blue */
+}
+
+.social-share a.facebook:hover {
+  color: #0c66e4; /* Facebook dark blue on hover */
+}
+
+.social-share a.twitter {
+  color: #1da1f2; /* Twitter blue */
+}
+
+.social-share a.twitter:hover {
+  color: #1a91da; /* Twitter dark blue on hover */
+}
+
+.social-share a.instagram {
+  color: #e1306c; /* Instagram pinkish-purplish */
+}
+
+.social-share a.instagram:hover {
+  color: #c13584; /* Instagram dark pink on hover */
+}
+
+.event-description {
+  display: none; /* Initially hide the description */
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+#more-info-btn {
+  display: block;
+  margin: 1rem auto; /* Centers the button */
+  background-color: #cbcbcb;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: 0.5;
+  margin-bottom: 50px;
+}
+
+#more-info-btn:hover {
+  background-color: #3c3c3c; /* Darker shade on hover */
+}
+
+
+
+
+
+
+
 

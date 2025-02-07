@@ -1,2 +1,15 @@
-// document.getElementById('footer-style-2').style.display = 'block'; // Show footer
-// sasd
+document.getElementById("more-info-btn").addEventListener("click", function() {
+    var description = document.getElementById("event-description");
+    if (description.style.display === "none" || description.style.display === "") {
+      description.style.display = "block"; // Show the description
+      this.textContent = "⫘⫘⫘⫘⫘⫘ Less Info ⫘⫘⫘⫘⫘⫘"; // Change button text
+    } else {
+      description.style.display = "none"; // Hide the description
+      this.textContent = "⫘⫘⫘⫘⫘⫘ More Info ⫘⫘⫘⫘⫘⫘"; // Reset button text
+    }
+  });
+  
+
+
+
+ 
