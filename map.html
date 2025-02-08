@@ -10,26 +10,159 @@
     <link rel="stylesheet" href="Styles/footer.css">
 
 </head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
 <style>
-   /* Ensure the image is responsive */
-.venue-map-image {
-    max-width: 100%;  /* Ensures the image doesn't overflow the screen */
-    height: auto;     /* Maintains the aspect ratio */
-    display: block;   /* Removes unwanted space below the image */
-    margin: 0 auto;   /* Centers the image */
-}
+    :root {
+        --primary: #2563eb;
+        --secondary: #1e40af;
+        --accent: #f59e0b;
+        --text: #1f2937;
+        --light: #f8fafc;
+        --dark: #0f172a;
+    }
 
-iframe{
-    border-radius: 15px;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
 
+    body {
+        background: var(--light);
+        color: var(--text);
+        line-height: 1.6;
+    }
 
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
 
+    h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: var(--dark);
+        position: relative;
+        padding-bottom: 1rem;
+    }
 
+    h1::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--accent);
+        border-radius: 2px;
+    }
 
+    .map-container {
+        margin: 3rem 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
+    .map-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
 
+    .venue-map-image {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        display: block;
+        margin-bottom: 3rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .venue-map-image:hover {
+        transform: scale(1.02);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    iframe {
+        width: 100%;
+        height: 450px;
+        border: none;
+        border-radius: 12px;
+    }
+
+    .location-details {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        margin-top: 2rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .location-details h2 {
+        font-size: 1.5rem;
+        color: var(--secondary);
+        margin-bottom: 1.5rem;
+    }
+
+    .location-details p {
+        margin-bottom: 1rem;
+        color: #475569;
+    }
+
+    .location-details i {
+        color: var(--primary);
+        margin-right: 0.5rem;
+    }
+
+    .location-details a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .location-details a:hover {
+        color: var(--secondary);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        main {
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .location-details {
+            padding: 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.75rem;
+        }
+
+        .location-details h2 {
+            font-size: 1.3rem;
+        }
+    }
 </style>
+
+
+
+
 
 <div class="wrapper">
 <body>
@@ -57,24 +190,35 @@ iframe{
     </header>
 
     
+
+
+
+
     <main>
+        <!-- Venue Map Section -->
         <h1>Venue Map</h1>
-        <img src="Images/venue map.jpg" alt="Venue Map" class="venue-map-image">
+        <div class="map-container">
+            <img src="Images/venue map.jpg" alt="Venue Map" class="venue-map-image">
+        </div>
 
-
-        
+        <!-- Location Section -->
         <h1>Our Location</h1>
-        <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2711.450795186973!2d35.8753239!3d31.8664435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca7b4717847e3%3A0xe6de4ef901ed045a!2sBisharat%20Golf%20Club!5e0!3m2!1sen!2sjo!4v1704360603662!5m2!1sen!2sjo"
-        width="100%"
-        height="450"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-    ></iframe>
-    
-    
-    
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2711.450795186973!2d35.8753239!3d31.8664435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca7b4717847e3%3A0xe6de4ef901ed045a!2sBisharat%20Golf%20Club!5e0!3m2!1sen!2sjo!4v1704360603662!5m2!1sen!2sjo"
+                allowfullscreen=""
+                loading="lazy"
+            ></iframe>
+        </div>
+
+        <!-- Location Details -->
+        <div class="location-details">
+            <h2>Bisharat Golf Club</h2>
+            <p><i class="fas fa-map-marker-alt"></i>Amman, Jordan</p>
+            <p><i class="fas fa-phone"></i><a href="tel:+96262002000">+962 6 200 2000</a></p>
+            <p><i class="fas fa-envelope"></i><a href="mailto:info@bisharatgolfclub.com">info@bisharatgolfclub.com</a></p>
+            <p><i class="fas fa-globe"></i><a href="https://www.bisharatgolfclub.com" target="_blank">www.bisharatgolfclub.com</a></p>
+        </div>
     </main>
 
 
@@ -82,7 +226,28 @@ iframe{
 </div>
 
 
+<script>
+    // Add smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 
+    // Add hover effects dynamically
+    const mapContainers = document.querySelectorAll('.map-container');
+    mapContainers.forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            container.style.transform = 'translateY(-5px)';
+        });
+        container.addEventListener('mouseleave', () => {
+            container.style.transform = 'translateY(0)';
+        });
+    });
+</script>
 
 
 
