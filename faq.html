@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="Styles/styles.css">
     <link rel="stylesheet" href="Styles/footer.css">
     <link rel="stylesheet" href="Styles/nav.css">
+    <link rel="stylesheet" href="Styles/FAQ Page Styles/faq.css">
 
 
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 
@@ -39,21 +40,152 @@
         <div id="overlay" onclick="closeNav()"></div>
     </header>
     
+
+
+
+
+
     <main>
-        <h1>Frequently Asked Questions</h1>
-        <section>
-            <h2>What is Eventura?</h2>
-            <p>Eventura is an event management platform that simplifies planning and executing events.</p>
-        </section>
-        <section>
-            <h2>How do I register my event?</h2>
-            <p>Click on the <strong>Contact</strong> page and send us your event details. We’ll guide you through the process.</p>
-        </section>
-        <section>
-            <h2>What types of events do you support?</h2>
-            <p>We support all event types, including corporate events, weddings, conferences, and concerts.</p>
-        </section>
+        <div class="faq-header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about Eventura</p>
+        </div>
+
+        <!-- Edit Category 1 -->
+        <div class="faq-category">
+            <h2 class="category-title">General Information</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is Eventura and how does it work?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Eventura is a comprehensive event management platform that helps you:</p>
+                    <ul>
+                        <li>Plan and organize events of any size</li>
+                        <li>Manage guest lists and invitations</li>
+                        <li>Coordinate with vendors and suppliers</li>
+                        <li>Track event budgets and expenses</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is there a free trial available?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We offer a 14-day free trial with full access to all features. No credit card required.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is there a free trial available?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We offer a 14-day free trial with full access to all features. No credit card required.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Category 2 -->
+        <div class="faq-category">
+            <h2 class="category-title">Event Registration</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I register my event?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>To register your event:</p>
+                    <ol>
+                        <li>Visit our Contact page</li>
+                        <li>Fill out the event registration form</li>
+                        <li>Our team will contact you within 24 hours</li>
+                        <li>Confirm your event details</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What information do I need to provide?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Please prepare the following details:</p>
+                    <ul>
+                        <li>Event date and location</li>
+                        <li>Expected number of attendees</li>
+                        <li>Type of event</li>
+                        <li>Special requirements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What information do I need to provide?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Please prepare the following details:</p>
+                    <ul>
+                        <li>Event date and location</li>
+                        <li>Expected number of attendees</li>
+                        <li>Type of event</li>
+                        <li>Special requirements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add More Categories Here -->
+        <!-- Copy the faq-category block and edit content -->
+
+        <div class="contact-cta">
+            <h2>Still have questions?</h2>
+            <p>Our support team is ready to help you 24/7</p>
+            <a href="#" class="cta-button">Contact Support</a>
+        </div>
     </main>
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                // Close other items
+                document.querySelectorAll('.faq-item').forEach(sibling => {
+                    if (sibling !== parent) {
+                        sibling.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
+
+
+
 
 
     <!-- WRAPPER DIV -->
