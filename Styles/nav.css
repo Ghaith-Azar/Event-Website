@@ -1,153 +1,188 @@
+:root {
+    --primary: #2563eb;
+    --secondary: #1e40af;
+    --accent: #f59e0b;
+    --text-light: #f8fafc;
+    --text-dark: #0f172a;
+    --nav-bg: rgba(13, 0, 69, 0.98);
+}
 
 
-/* Default Sidenav Style (Desktop) */
+
+header {
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10000;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    height: 70px; /* Smaller header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle i {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+}
+
+/* Sidenav Styling */
 .sidenav {
-    height: 100%; /* Full height */
-    width: 0; /* Start with 0 width */
-    position: fixed; /* Fixed position */
-    z-index: 9999; /* Highest priority to stay above other elements */
+    height: 100vh;
+    width: 0;
+    position: fixed;
     top: 0;
     left: 0;
-    background-color: #111; /* Black background */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px;
-    transition: 0.5s; /* Smooth transition effect */
-}
-header{
-    background-color: #0d0045;
+    background: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(15px);
+    overflow-x: hidden;
+    z-index: 9999;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 5px 0 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Navigation links */
+.sidenav.active {
+    width: 300px;
+}
+
+.sidenav ul {
+    padding: 100px 2rem 2rem;
+    list-style: none;
+}
+
+.sidenav li {
+    margin: 1.2rem 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+}
+
+.sidenav.active li {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: calc(0.1s * var(--i));
+}
+
 .sidenav a {
-    color: #fff;
+    color: var(--text-light);
     text-decoration: none;
-    display: block;
-    padding: 10px 20px;
-    font-size: 18px;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .sidenav a:hover {
-    color: #dedede;
-    background-color: #232323;
-
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(10px);
 }
 
-/* Close button */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
- 
-}
-
-/* Open button styling */
-span {
-    cursor: pointer;
-    font-size: 30px;
-    color: #ffffff;
-    
-}
-
-/* Page content */
-#main {
-    padding: 20px;
-}
-
-nav ul {
-    list-style: none;
-    padding-left: 10px;
-    flex-wrap: wrap;
-}
-
-nav ul li {
-    display: inline;
-    font-size: 20px;
-  
-}
-
-nav ul li a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-    /* margin-top: 25px; */
-    height: 30px;
-    align-self: center;
-}
-
-
-/* Mobile-specific style: Full-screen sidenav on smaller screens */
-@media screen and (max-width: 500px) {
-    .sidenav {
-        width: 100%; /* Full screen on mobile devices */
-    }
-}
-
-
-
-
-/* Styling for the navigation links */
-nav ul li a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    display: inline-block;
-    padding: 5px 0;
-}
-
-/* Create the underline effect */
-nav ul li a::after {
-    content: "";
+.sidenav a::before {
+    content: '';
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: #ffffff; /* Adjust color as needed */
-    transition: width 0.37s ease-in-out;
+    width: 3px;
+    height: 100%;
+    background: var(--accent);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
 }
 
-/* On hover, expand the underline from left to right */
-nav ul li a:hover::after {
-    width: 100%;
+.sidenav a:hover::before {
+    transform: scaleY(1);
 }
 
+/* Close Button */
+.closebtn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
 
+.closebtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
+}
 
-
-
-
-
-
-
-
-
-/* Overlay for dimming effect */
+/* Overlay Styling */
 #overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Adjust transparency */
-    z-index: 9998; /* Slightly lower than sidenav */
-    display: none; /* Hidden by default */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 
-/* Show overlay when nav is open */
-.sidenav-active #overlay {
-    display: block;
+#overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
-
-
-
-#mySidenav {
-    transition: width 0.5s ease;
+/* Animations */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-#overlay {
-    transition: opacity 0.3s ease;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidenav.active {
+        width: 100%;
+    }
+
+    .sidenav a {
+        font-size: 1.2rem;
+        padding: 1.2rem 2rem;
+    }
+
+    header {
+        padding: 0 1rem;
+    }
 }

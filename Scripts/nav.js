@@ -1,43 +1,41 @@
-// Function to open the navigation
 function openNav() {
     const sidenav = document.getElementById("mySidenav");
     const overlay = document.getElementById("overlay");
+    const navLinks = document.querySelectorAll('.sidenav li');
 
-    if (window.innerWidth <= 500) {
-        sidenav.style.width = "100%"; // Full screen on mobile
-    } else {
-        sidenav.style.width = "300px"; // Partial width on desktop
-    }
+    sidenav.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
 
-    // Show overlay
-    overlay.style.display = "block";
-    document.body.classList.add('sidenav-active'); // Add class to body for styling
+    // Animate links with staggered delay
+    navLinks.forEach((link, index) => {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${index * 0.1}s`;
+    });
 }
 
-// Function to close the navigation
 function closeNav() {
     const sidenav = document.getElementById("mySidenav");
     const overlay = document.getElementById("overlay");
+    
+    sidenav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
 
-    // Close sidenav
-    sidenav.style.width = "0";
-
-    // Hide overlay
-    overlay.style.display = "none";
-    document.body.classList.remove('sidenav-active'); // Remove class from body
+    // Reset animations
+    document.querySelectorAll('.sidenav li').forEach(link => {
+        link.style.animation = '';
+    });
 }
 
-// Automatically close the nav when a link is clicked
-const navLinks = document.querySelectorAll(".sidenav a");
-navLinks.forEach(link => {
-    link.addEventListener("click", closeNav);
+// Close nav when clicking overlay
+document.getElementById('overlay').addEventListener('click', closeNav);
+
+// Close nav when clicking links
+document.querySelectorAll('.sidenav a').forEach(link => {
+    link.addEventListener('click', closeNav);
 });
 
-// Ensure the nav is closed by default when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-    closeNav();
+// Close nav on ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNav();
 });
-
-
-
-
