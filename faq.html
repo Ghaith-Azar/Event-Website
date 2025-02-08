@@ -151,39 +151,11 @@
         <div class="contact-cta">
             <h2>Still have questions?</h2>
             <p>Our support team is ready to help you 24/7</p>
-            <a href="#" class="cta-button">Contact Support</a>
+            <a href="contact.html" class="cta-button">Contact Support</a>
         </div>
     </main>
 
-    <script>
-        // Accordion functionality
-        document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', () => {
-                const parent = item.parentElement;
-                parent.classList.toggle('active');
-                
-                // Close other items
-                document.querySelectorAll('.faq-item').forEach(sibling => {
-                    if (sibling !== parent) {
-                        sibling.classList.remove('active');
-                    }
-                });
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-
-
-
+   
 
 
 
