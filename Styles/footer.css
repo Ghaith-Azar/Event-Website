@@ -10,14 +10,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #f8f9fa;
 }
 
 /* Footer Styling */
@@ -96,6 +94,17 @@ body {
 .footer-section ul li a:hover::before {
     width: 100%;
 }
+.contact-info p a{
+    color: #a33400;
+    margin-left: 3px;
+    text-decoration: none;
+}
+.contact-info p a:hover{
+    color: #0f172a;
+}
+
+
+
 
 /* Social Icons */
 .redes {
